@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociales</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 22px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      opacity: 0.85;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    /* ── Botón base ── */
+    .btn {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 50px;
+      overflow: hidden;
+      height: 62px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+
+    /* ── Círculo del icono ── */
+    .btn .icon {
+      width: 68px;
+      height: 68px;
+      min-width: 68px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+      margin-left: -3px;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* Brillo en el círculo */
+    .btn .icon::after {
+      content: '';
+      position: absolute;
+      top: 6px; left: 10px;
+      width: 40%; height: 35%;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+
+    /* ── Label ── */
+    .btn .label {
+      flex: 1;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0 20px 0 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Facebook ── */
+    .btn.facebook .icon {
+      background: radial-gradient(circle at 35% 35%, #5b9ef7, #1877f2 60%, #0e5fc0);
+    }
+    .btn.facebook { background: linear-gradient(90deg, #1877f2, #1565c0); }
+
+    /* ── YouTube ── */
+    .btn.youtube .icon {
+      background: radial-gradient(circle at 35% 35%, #ff6b6b, #ff0000 60%, #c00000);
+    }
+    .btn.youtube { background: linear-gradient(90deg, #ff0000, #c00000); }
+
+    /* ── Twitter / X ── */
+    .btn.twitter .icon {
+      background: radial-gradient(circle at 35% 35%, #6ec6f5, #1da1f2 60%, #0d86d1);
+    }
+    .btn.twitter { background: linear-gradient(90deg, #1da1f2, #0d86d1); }
+
+    /* ── WhatsApp ── */
+    .btn.whatsapp .icon {
+      background: radial-gradient(circle at 35% 35%, #6ed98f, #25d366 60%, #1aab52);
+    }
+    .btn.whatsapp { background: linear-gradient(90deg, #25d366, #1aab52); }
+
+    /* ── Instagram ── */
+    .btn.instagram .icon {
+      background: radial-gradient(circle at 35% 35%, #f9a96e, #e1306c 50%, #833ab4);
+    }
+    .btn.instagram {
+      background: linear-gradient(90deg, #f77737, #e1306c, #833ab4);
+    }
+
+    /* ── TikTok ── */
+    .btn.tiktok .icon {
+      background: radial-gradient(circle at 35% 35%, #555, #222 60%, #111);
+      border: 2px solid #444;
+    }
+    .btn.tiktok { background: linear-gradient(90deg, #2a2a2a, #111111); }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Síguenos</h1>
+
+  <div class="grid">
+
+    <a class="btn facebook" href="https://facebook.com" target="_blank">
+      <div class="icon"><i class="fab fa-facebook-f"></i></div>
+      <span class="label">username</span>
+    </a>
+
+    <a class="btn youtube" href="https://youtube.com" target="_blank">
+      <div class="icon"><i class="fab fa-youtube"></i></div>
+      <span class="label">username</span>
+    </a>
+
+    <a class="btn twitter" href="https://twitter.com" target="_blank">
+      <div class="icon"><i class="fab fa-x-twitter"></i></div>
+      <span class="label">username</span>
+    </a>
+
+    <a class="btn whatsapp" href="https://wa.me/215599883" target="_blank">
+      <div class="icon"><i class="fab fa-whatsapp"></i></div>
+      <span class="label">+21 5599883</span>
+    </a>
+
+    <a class="btn instagram" href="https://instagram.com" target="_blank">
+      <div class="icon"><i class="fab fa-instagram"></i></div>
+      <span class="label">username</span>
+    </a>
+
+    <a class="btn tiktok" href="https://tiktok.com" target="_blank">
+      <div class="icon"><i class="fab fa-tiktok"></i></div>
+      <span class="label">username</span>
+    </a>
+
+  </div>
+
+</body>
+</html>
